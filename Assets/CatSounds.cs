@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class CatSounds : MonoBehaviour
 {
-
-    private AudioSource audioSource; // Declare audioSource
+    public AudioClip catSound;
+    private AudioSource audioSource;
     private Vector3 lastPosition; // Declare lastPosition
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.clip = catSound;
         lastPosition = transform.position;
     }
 
@@ -30,3 +31,4 @@ public class CatSounds : MonoBehaviour
         lastPosition = transform.position;
     }
 }
+
